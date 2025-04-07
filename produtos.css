@@ -1,0 +1,41 @@
+body, html{
+    margin:0;
+    padding: 0;
+    height: 100%;
+}
+.container{
+    width: 80%;
+    height: 100%;
+    background-color: #ffff65;
+    margin: 0 auto;
+}
+.header{
+    height: 175px;
+    width: 100%;
+    background-color: #ff0000;
+}
+nav{
+    height: 75px;
+    width: 100%;
+    background-color: purple;
+}
+.descricao{
+    height: 150px;
+    width: 100%;
+    background-color: #00f;
+}
+.produto{
+    height: 500px;
+    width: 100%;
+}
+.img-produto{
+    width: 50%;
+    height: 100%;
+    background-color: chartreuse;
+
+}
+.comprar-produto{
+    width: 50%;
+    height: 100%;
+    background-color: darkgoldenrod;
+}
