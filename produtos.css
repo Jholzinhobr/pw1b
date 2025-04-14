@@ -27,15 +27,16 @@ nav{
 .produto{
     height: 500px;
     width: 100%;
+    display: flex
 }
 .img-produto{
     width: 50%;
     height: 100%;
     background-color: chartreuse;
-
+    
 }
 .comprar-produto{
-    width: 100%;
+    width: 50%;
     height: 100%;
     background-color: rgb(250, 226, 11);
 }
