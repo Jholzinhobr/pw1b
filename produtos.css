@@ -57,6 +57,7 @@ nav{
 .botao-comprar{
     background-color: #ff6500;
     color: #ffffff;
-    padding: 0 150px;
+    padding: 0 60px;
     border: none;
+    width: 50%;
 }
