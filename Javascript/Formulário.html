@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de CEP</title>
+</head>
+<body>
+    <form onsubmit= "return validarFormulario()"action="salvar.html" method="get">
+        <label>CEP</label>
+        <input name="cep" type="text"
+        class="campo" id="cep"/> <br/><br/>
+        <label>Endereço</label>
+         <input name="endereço" type="text"
+         class="campo" id="endereço"/> <br/><br/>
+         <label>Cidade</label>
+         <input name="Cidade" type="text" class="campo" id="Cidade"/> <br/><br/>
+         <label>numero</label>
+         <input name="numero" type="text" class="campo" id="numero"/> <br/><br/>
+         <label> Rua</label>
+         <input name="Rua" type="text" class="campo" id="Rua"/> <br/><br/>
+         <label>Estado</label>
+         <input name="Estado" type="text" class="campo" id="Estado"/> <br/><br/>
+         <button type="submit" id="botão">
+             Buscar 
+        </button>
+         
+    </form>
+    <br/>
+    <button onclick="piscarbotao()"id="piscador">
+        Clique aqui para piscar botão
+    </button>
+<script>
+    function validarFormulario()
+    {
+        var cep = document.getElementById ('cep')
+        if(cep.value == "")
+        {
+            alert("O com CEP deve ser preenchido")
+            return false
+        }
+        
+    }
+    
+    function piscarbotao()
+    {
+        var piscador = document.getElementById('piscador')
+        if(piscador.style.backgroundColor == 'red')
+        {
+            piscador.style.backgroundColor = 'blue'
+        } else {
+            piscador.style.backgroundColor = 'red'
+        }
+    }
+</script>
+</body>
+</html>
