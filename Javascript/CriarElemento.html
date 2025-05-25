@@ -11,7 +11,9 @@
     <label for="cor">Cor de fundo:</label>
     <input type="color" id="cor" value=""> <br/><br/>
     <label for="texto">Cor da Fonte:</label>
-    <input type="color" id="texto" value=""> 
+    <input type="color" id="texto" value="">
+    <label for="mensagem"> </label>
+    <input type="text" id="mensagem" placeholder="Digite sua mensagem">
     
     <button onclick="CriarElemento()" id="botao">
         Criar Elemento
@@ -24,12 +26,13 @@
         {
             var cor = document.getElementById ("cor")
             var texto = document.getElementById ("texto")
+            var mensagem = document.getElementById ("mensagem")
 
             var elemento = document.createElement("h1")
             elemento.style.backgroundColor = cor.value //'#FF6500'
             elemento.style.color = texto.value
             elemento.style.fontSize = '50px'
-            elemento.innerText = "Fala Galera!"
+            elemento.innerText = mensagem.value
             elemento.classList.add("ClasseCampo")
 
             var caixa = document.getElementById("caixa")
@@ -37,10 +40,9 @@
             
         }
             alert ("Bem vindo usuário !")
-            alert ("Escolha a cor da sua fonte que vc gosta e também de sua cor de fundo.")
+            alert ("Escolha a cor da sua fonte que vc gosta e também de sua cor de fundo, pois logo em seguida, veja a magica acontecer !")
+
     </script>
-
-
     
 </body>
 </html>
