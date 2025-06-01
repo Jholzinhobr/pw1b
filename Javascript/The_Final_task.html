@@ -9,34 +9,201 @@
 <body>
     <h1> Trablaho Final !</h1><hr>    
     
-    <h2>1.Crie uma div, um input, uma lista ("UL") e um botão</h2>
+    <h2>1. Crie uma div, um input, uma lista ("UL") e um botão.</h2>
 
     <div>
         <input type="text" id="lista" placeholder="Digite algo !">        
-        <button onclick="" id="botao">
-            Clique aqui 
-        </button>
+        <button onclick="" id="botao"> 
+            Clique aqui </button>
+
         <div id="lista"></div>
-
-            <script>
-            function lista()
-
-        
-            </script>
-        
+            
         <ul>
             <li class="item-menu">
-                <a class= "link-item-menu" href="#"> Linha01</a>
+                <a> Linha01 </a>
             </li>
             <li class="item-menu">
-                <a class= "link-item-menu" href="#"> Linha02</a>
+                <a> Linha02 </a>
             </li>
             <li class="item-menu">
-                <a class= "link-item-menu" href="#"> Linha03</a>
+                <a> Linha03 </a>
+            </li>
+            <li class="item-menu">
+                <a> Linha04 </a>
             </li>
         </ul>
     </div>
+    
+    <hr><h2> 2. Crie um vetor com 150 números em ordem decrescente.</h2>
 
+    <button onclick="NumerosDecrescentes()">Clique aqui</button>
+    <p id="saida"></p>
+    <script>
+        var decrescente = []
+
+        for (var i = 150; i >= 1; i--) 
+        {
+            decrescente.push(i)
+        }
+        function NumerosDecrescentes() 
+        {
+            var saida = document.getElementById("saida")
+            saida.innerHTML = decrescente.join("<br>")
+        }
+    </script>
+
+    <hr><h2> 3. Crie uma função que coloque o vetor dentro do UL utilizando createElement("li").</h2>
+        
+    <ul id="lista-dos-numeros"></ul>
+
+    <button onclick="InserirNumeros()">Inserir Números</button>
+
+    <script>
+    function InserirNumeros() 
+    {
+    var ul = document.getElementById("lista-dos-numeros")
+
+    for (var i = 1; i <= 20; i++) 
+    {
+        var li = document.createElement("li")
+        li.textContent = "Número: " + i
+        ul.appendChild(li)
+    }
+    }
+    </script>
+
+    <hr><h2> 4. Some todos os números pares desse vetor e exiba na tela dentro de uma div</h2>
+     
+    <button onclick="SomaDosPares()">Calcular Pares</button>
+    <ul id="SomaPares"></ul>
+    
+    <div id="resultado-pares">
+    <script>
+    
+    function SomaDosPares()
+    {
+    var ul = document.getElementById("SomaPares")
+    var somaPares = 0;
+
+    for (var i = 1; i <= 20; i++) 
+    {
+        var li = document.createElement("li")
+        li.textContent = "Número: " + i
+        ul.appendChild(li)
+
+        if (i % 2 == 0) 
+        {
+            somaPares = somaPares + i
+        }
+    }
+
+    var resultado = document.getElementById("resultado-pares")
+    resultado.innerText = "Soma dos números pares: " + somaPares
+    }
+    
+    </script>
+    </div>
+
+    <hr><h2>5. Some todos os números ímpares desse vetor e exiba na tela dentro de uma input.</h2>
+
+    <button onclick="somarImpares()">Somar Ímpares</button>
+    <button onclick="mostrarVetores()">Ver os vetores</button>
+    <input type="text" id="input-impares">
+    
+    <div id="resultado-soma-impares">
+        <div id="listaVetores"></div>
+    
+    
+
+    <script>
+    var impar = [];
+
+    for (var i = 20; i >= 1; i--) 
+    {
+        impar.push(i);
+    }
+
+    var vetor = [];
+    for (var i = 40; i > 0; i--) 
+    {
+    vetor.push(i);
+    }
+
+    function somarImpares() 
+    {
+        var soma = 0;
+        for (var i = 0; i < impar.length; i++) 
+        {
+            if (impar[i] % 2 !== 0) 
+            {
+                soma += impar[i]
+            }
+        }
+
+        document.getElementById("input-impares").value = soma
+    }
+
+    function mostrarVetores() 
+    {
+    var divLista = document.getElementById('listaVetores')
+    divLista.innerHTML = ''; 
+
+    var ul = document.createElement('ul')
+    for (var i = 0; i < vetor.length; i++) {
+        var li = document.createElement('li')
+        li.textContent = vetor[i]
+        ul.appendChild(li)
+    }
+
+    divLista.appendChild(ul)
+}
+    </script>
+    </div>
+
+    <hr><h2>6. Multiplique cada elemento do vetor por 2 e armazene os resultados em uma nova DIV.</h2>
+
+<button onclick="multiplicarValor()">Digite e multiplique</button>
+<button onclick="mostrarVetores()">Ver os vetores</button>
+
+<div id="resultadoMultiplicacao"></div>
+<div id="listaVetores"></div>
+
+<script>
+
+var vetor = [];
+for (var i = 40; i > 0; i--) 
+{
+    vetor.push(i);
+}
+
+function multiplicarValor() 
+{
+    var valor = prompt('Digite um valor numérico:')
+
+    var resultado = valor * 2
+
+    var divResultado = document.getElementById('resultadoMultiplicacao')
+    divResultado.textContent = 'Resultado: ' + resultado
+}
+
+function mostrarVetores() 
+{
+    var divLista = document.getElementById('listaVetores')
+    divLista.innerHTML = ''
+
+    var ul = document.createElement('ul')
+    for (var i = 0; i < vetor.length; i++) 
+    {
+        var li = document.createElement('li')
+        li.textContent = vetor[i]
+        ul.appendChild(li)
+    }
+
+    divLista.appendChild(ul)
+}
+</script>
+    
+<hr><h2> 7. Ao clicar no botão todas as ações anteriores devem ser executadas.</h2>
 
 </body>
 </html>
