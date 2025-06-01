@@ -34,10 +34,11 @@
         </ul>
     </div>
     
+    
     <hr><h2> 2. Crie um vetor com 150 números em ordem decrescente.</h2>
 
     <button onclick="NumerosDecrescentes()">Clique aqui</button>
-    <p id="saida"></p>
+    <p id="saida-decrescente"></p>
     <script>
         var decrescente = []
 
@@ -47,21 +48,21 @@
         }
         function NumerosDecrescentes() 
         {
-            var saida = document.getElementById("saida")
+            var saida = document.getElementById("saida-decrescente")
             saida.innerHTML = decrescente.join("<br>")
         }
     </script>
 
     <hr><h2> 3. Crie uma função que coloque o vetor dentro do UL utilizando createElement("li").</h2>
-        
-    <ul id="lista-dos-numeros"></ul>
-
+    
     <button onclick="InserirNumeros()">Inserir Números</button>
+
+    <ul id="lista-numeros"></ul>
 
     <script>
     function InserirNumeros() 
     {
-    var ul = document.getElementById("lista-dos-numeros")
+    var ul = document.getElementById("lista-numeros")
 
     for (var i = 1; i <= 20; i++) 
     {
@@ -83,7 +84,7 @@
     function SomaDosPares()
     {
     var ul = document.getElementById("SomaPares")
-    var somaPares = 0;
+    var somaPares = 0
 
     for (var i = 1; i <= 20; i++) 
     {
@@ -107,31 +108,31 @@
     <hr><h2>5. Some todos os números ímpares desse vetor e exiba na tela dentro de uma input.</h2>
 
     <button onclick="somarImpares()">Somar Ímpares</button>
-    <button onclick="mostrarVetores()">Ver os vetores</button>
+    <button onclick="visualiVetores()">Ver os vetores</button>
     <input type="text" id="input-impares">
 
     <div id="resultado-soma-impares">
-        <div id="listaVetores"></div>
+        <div id="lista-Vetores"></div>
     
     
 
     <script>
-    var impar = [];
+    var impar = []
 
     for (var i = 20; i >= 1; i--) 
     {
-        impar.push(i);
+        impar.push(i)
     }
 
-    var vetor = [];
+    var vetor = []
     for (var i = 40; i > 0; i--) 
     {
-    vetor.push(i);
+    vetor.push(i)
     }
 
     function somarImpares() 
     {
-        var soma = 0;
+        var soma = 0
         for (var i = 0; i < impar.length; i++) 
         {
             if (impar[i] % 2 !== 0) 
@@ -143,13 +144,14 @@
         document.getElementById("input-impares").value = soma
     }
 
-    function mostrarVetores() 
+    function visualiVetores() 
     {
-    var divLista = document.getElementById('listaVetores')
-    divLista.innerHTML = ''; 
+    var divLista = document.getElementById('lista-Vetores')
+    divLista.innerHTML = ''
 
     var ul = document.createElement('ul')
-    for (var i = 0; i < vetor.length; i++) {
+    for (var i = 0; i < vetor.length; i++) 
+    {
         var li = document.createElement('li')
         li.textContent = vetor[i]
         ul.appendChild(li)
@@ -165,15 +167,15 @@
 <button onclick="multiplicarValor()">Digite e multiplique</button>
 <button onclick="mostrarVetores()">Ver os vetores</button>
 
-<div id="resultadoMultiplicacao"></div>
-<div id="listaVetores"></div>
+<div id="resultado-Multiplicacao"></div>
+<div id="listVMultiplicados"></div>
 
 <script>
 
-var vetor = [];
-for (var i = 40; i > 0; i--) 
+var vetor = []
+for (var i = 1; i <= 40; i) 
 {
-    vetor.push(i);
+    vetor.push(i)
 }
 
 function multiplicarValor() 
@@ -182,13 +184,13 @@ function multiplicarValor()
 
     var resultado = valor * 2
 
-    var divResultado = document.getElementById('resultadoMultiplicacao')
+    var divResultado = document.getElementById('resultado-Multiplicacao')
     divResultado.textContent = 'Resultado: ' + resultado
 }
 
 function mostrarVetores() 
 {
-    var divLista = document.getElementById('listaVetores')
+    var divLista = document.getElementById('listVMultiplicados')
     divLista.innerHTML = ''
 
     var ul = document.createElement('ul')
@@ -204,6 +206,22 @@ function mostrarVetores()
 </script>
     
 <hr><h2> 7. Ao clicar no botão todas as ações anteriores devem ser executadas.</h2>
+<button onclick="executarTudo()"> Chama galera do vetor</button>
+
+<script>
+
+    function executarTudo()
+    {
+        NumerosDecrescentes()
+        InserirNumeros()
+        SomaDosPares()
+        somarImpares()
+        visualiVetores()
+        multiplicarValor()
+        mostrarVetores()
+    }
+
+</script>
 
 </body>
 </html>
