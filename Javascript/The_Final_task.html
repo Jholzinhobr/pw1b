@@ -16,7 +16,7 @@
         <button onclick="" id="botao"> 
             Clique aqui </button>
 
-        <div id="lista"></div>
+        <div id="list"></div>
             
         <ul>
             <li class="item-menu">
@@ -119,7 +119,7 @@
     <script>
     var impar = []
 
-    for (var i = 20; i >= 1; i--) 
+    for (var i = 37; i >= 1; i--) 
     {
         impar.push(i)
     }
@@ -172,15 +172,15 @@
 
 <script>
 
-var vetor = []
-for (var i = 1; i <= 40; i) 
+var vetor01 = []
+for (var i = 1; i <= 40; i++) 
 {
-    vetor.push(i)
+    vetor01.push(i)
 }
 
 function multiplicarValor() 
 {
-    var valor = prompt('Digite um valor numérico:')
+    var valor = prompt('Digite um valor numérico para ele ser multiplicado por 2: ')
 
     var resultado = valor * 2
 
@@ -194,10 +194,10 @@ function mostrarVetores()
     divLista.innerHTML = ''
 
     var ul = document.createElement('ul')
-    for (var i = 0; i < vetor.length; i++) 
+    for (var i = 0; i < vetor01.length; i++) 
     {
         var li = document.createElement('li')
-        li.textContent = vetor[i]
+        li.textContent = vetor01[i]
         ul.appendChild(li)
     }
 
