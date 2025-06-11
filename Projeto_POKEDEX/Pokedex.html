@@ -4,28 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" href="./IMAGENS/Bone_do_Ash.png">
+    <!---links-->
+  <link rel="icon" href="./IMAGENS/Bone_do_Ash.png">
+  <link rel="stylesheet" href="./CSS/modigicador.css">
+
+    <!--Main JS-->
+    <script> src=""</script>
 
     <title>Pokedex</title>
-    <style>
-        body{
-            margin: 0;
-            height: 100%;
-        }
-        .pokedex{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 300px;
-        height: auto;
-    }
-    </style>
-
 </head>
 <body>
    
     <main>
+        <img src="" alt="pokemon" class="pokemon_image">
+
+        <h1 class="pokemon_data">
+            <span class="pokemon_number">6</span>-
+            <span class="pokemon_name">Charizard</span>
+        </h1>
+
+        <form class="form">
+            <input 
+                type="search"
+                class="input_search"
+                placeholder="Name or Number"
+                required
+                />
+        </form>
+        
+        <div class="buttons">
+            <button class="button btn-prev">Prev &lt;</button>
+            <button class="button btn-next">Next &gt;</button>
+        </div>
+
         <img src="./IMAGENS/pokedex-preto-laranja.png" alt="pokedex" class="pokedex">
     </main>
 
