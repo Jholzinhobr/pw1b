@@ -30,7 +30,7 @@ main {
     position: absolute;
     bottom: 55%;
     left: 50%;
-    transform: translate(-63%, 70%); /* '(X,Y)' */
+    transform: translate(-63%, 15%); /* '(X,Y)' */
     height: 18%;
 }
 
