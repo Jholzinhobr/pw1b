@@ -84,9 +84,9 @@ main {
     border-radius:  5px;
     font-size: clamp(8px, 5vw, 1rem);
     font-weight: 600;
-    color: white;
-    background-color: #444;
-    box-shadow: -2px 3px 0 #222, -4px 6px 0 #000;
+    color: rgb(216, 108, 20);
+    background-color: rgb(37, 35, 35);
+    box-shadow: -2px 3px 0 #222, -4px 6px 0 rgb(163, 82, 5);
 }
 
 .button:active{
