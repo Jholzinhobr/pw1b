@@ -7,7 +7,7 @@ const input = document.querySelector('.input_search');
 const buttonPrev = document.querySelector('.btn-prev'); 
 const buttonNext = document.querySelector('.btn-next'); 
 
-const detalhesBtn = document.querySelector('.btn-detalhes');
+const buttondetalhes = document.querySelector('.btn-detalhes');
 const detalhesBox = document.querySelector('.pokemon_details');
 const altura = document.querySelector('.pokemon_height');
 const peso = document.querySelector('.pokemon_weight');
@@ -72,7 +72,7 @@ buttonNext.addEventListener('click', () => {
 });
 renderPokemon(searchPokemon);
 
-detalhesBtn.addEventListener('click', () => {
+buttondetalhes.addEventListener('click', () => {
   if (detalhesBox.style.display === 'none') {
     detalhesBox.style.display = 'block';
   } else {

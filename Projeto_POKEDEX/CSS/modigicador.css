@@ -24,6 +24,7 @@ main {
 .pokedex {
     width: 100%;
     max-width: 425px;
+
 }
 
 .pokemon_image {
@@ -40,12 +41,13 @@ main {
     color: #aaa;
     top: 54.5%;
     right: 27%;
-    font-size: clamp(8px, 5vm, 25px);
+    font-size: clamp(8px, 5vw, 25px);
 }
 
 .pokemon_name{
     color: #3a444d;
     text-transform: capitalize;
+    display: inline-block;
 }
 
 .form{
@@ -87,7 +89,7 @@ main {
     font-weight: 600;
     color: rgb(216, 108, 20);
     background-color: rgb(37, 35, 35);
-    box-shadow: -2px 3px 0 #222, -4px 6px 0 rgb(163, 82, 5);
+    box-shadow: -2px 3px 0 #222, -4px 6px 0 rgb(163, 82vw, 5);
 }
 
 .button:active{
@@ -98,13 +100,13 @@ main {
 .pokemon_details {
   position: absolute;
   top: 70%;
-  left: 50%;
+  left: 45%;
   transform: translateX(-50%);
-  color: white;
+  color: rgb(243, 103, 10);
   font-size: 14px;
   text-align: left;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(61, 50vw, 50, 0.3);
   padding: 10px;
   border-radius: 10px;
-  width: 80%;
+  width: 67%;
 }
