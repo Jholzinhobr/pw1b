@@ -50,10 +50,10 @@ main {
 
 .form{
   position: absolute;
-  width: 65%;
-  top: 80%;
-  left: 13.5%;
-  z-index: 3;
+  width: 70%;
+  top: 62%;
+  left: 12%;
+  z-index: 10;
 }
 
 .input_search{
