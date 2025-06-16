@@ -7,6 +7,13 @@ const input = document.querySelector('.input_search');
 const buttonPrev = document.querySelector('.btn-prev'); 
 const buttonNext = document.querySelector('.btn-next'); 
 
+const detalhesBtn = document.querySelector('.btn-detalhes');
+const detalhesBox = document.querySelector('.pokemon_details');
+const altura = document.querySelector('.pokemon_height');
+const peso = document.querySelector('.pokemon_weight');
+const tipos = document.querySelector('.pokemon_types');
+const habilidades = document.querySelector('.pokemon_abilities');
+
 let searchPokemon = 1;
 
 const fetchpokemon = async (pokemon) => {
@@ -22,6 +29,7 @@ const renderPokemon = async (pokemon) => {
 
     pokemon.innerHTML = 'loading...';
     pokemonNumber.innerHTML = '';
+    detalhesBox.style.display = 'none';
      
     const data = await fetchpokemon(pokemon);
 
@@ -32,6 +40,11 @@ const renderPokemon = async (pokemon) => {
     pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
     input.value = '';
     searchPokemon = data.id;
+
+        altura.innerHTML = data.height / 10 + " m";
+    peso.innerHTML = data.weight / 10 + " kg";
+    tipos.innerHTML = data.types.map(t => t.type.name).join(', ');
+    habilidades.innerHTML = data.abilities.map(h => h.ability.name).join(', ');
     } else {
       pokemonImage.style.display = 'none';  
       pokemonName.innerHTML = 'Not Found :C';
@@ -58,3 +71,11 @@ buttonNext.addEventListener('click', () => {
     renderPokemon(searchPokemon);
 });
 renderPokemon(searchPokemon);
+
+detalhesBtn.addEventListener('click', () => {
+  if (detalhesBox.style.display === 'none') {
+    detalhesBox.style.display = 'block';
+  } else {
+    detalhesBox.style.display = 'none';
+  }
+});
