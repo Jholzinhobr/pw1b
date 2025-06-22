@@ -6,8 +6,8 @@ const form = document.querySelector('.form');
 const input = document.querySelector('.input_search');
 const buttonPrev = document.querySelector('.btn-prev'); 
 const buttonNext = document.querySelector('.btn-next'); 
-
 const buttondetalhes = document.querySelector('.btn-detalhes');
+
 const detalhesBox = document.querySelector('.pokemon_details');
 const altura = document.querySelector('.pokemon_height');
 const peso = document.querySelector('.pokemon_weight');
@@ -15,6 +15,22 @@ const tipos = document.querySelector('.pokemon_types');
 const habilidades = document.querySelector('.pokemon_abilities');
 
 let searchPokemon = 1;
+
+const tiposPt = {
+  grass: 'Grama', poison: 'Veneno', fire: 'Fogo', water: 'Água', electric: 'Elétrico',
+  flying: 'Voador', bug: 'Inseto', normal: 'Normal', ground: 'Terra', rock: 'Pedra',
+  psychic: 'Psíquico', ghost: 'Fantasma', dark: 'Sombrio', steel: 'Aço',
+  ice: 'Gelo', dragon: 'Dragão', fighting: 'Lutador', fairy: 'Fada'
+};
+
+const habilidadesPt = {
+  overgrow: 'Crescimento', chlorophyll: 'Clorofila', blaze: 'Chama',
+  torrent: 'Torrente', static: 'Estático', 'lightning-rod': 'Para-raios',
+  'solar-power': 'Energia Solar'
+};
+
+const traduzir = (lista, dicionario) =>
+  lista.map(nome => dicionario[nome] ?? nome).join(', ');
 
 const fetchpokemon = async (pokemon) => {
     const APIResponse = await fetch (`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
@@ -27,10 +43,12 @@ const fetchpokemon = async (pokemon) => {
 
 const renderPokemon = async (pokemon) => {
 
-    pokemon.innerHTML = 'loading...';
+    pokemonName.innerHTML = 'Procurando...';
     pokemonNumber.innerHTML = '';
     detalhesBox.style.display = 'none';
      
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
     const data = await fetchpokemon(pokemon);
 
     if (data) {
@@ -41,13 +59,14 @@ const renderPokemon = async (pokemon) => {
     input.value = '';
     searchPokemon = data.id;
 
-        altura.innerHTML = data.height / 10 + " m";
+    altura.innerHTML = data.height / 10 + " m";
     peso.innerHTML = data.weight / 10 + " kg";
-    tipos.innerHTML = data.types.map(t => t.type.name).join(', ');
-    habilidades.innerHTML = data.abilities.map(h => h.ability.name).join(', ');
+
+    tipos.innerHTML = traduzir(data.types.map(t => t.type.name), tiposPt);
+    habilidades.innerHTML = traduzir(data.abilities.map(h => h.ability.name), habilidadesPt);
     } else {
       pokemonImage.style.display = 'none';  
-      pokemonName.innerHTML = 'Not Found :C';
+      pokemonName.innerHTML = 'Não encontrei :(';
       pokemonNumber.innerHTML = '';
     }
 
@@ -70,12 +89,9 @@ buttonNext.addEventListener('click', () => {
     searchPokemon += 1;
     renderPokemon(searchPokemon);
 });
-renderPokemon(searchPokemon);
 
 buttondetalhes.addEventListener('click', () => {
-  if (detalhesBox.style.display === 'none') {
-    detalhesBox.style.display = 'block';
-  } else {
-    detalhesBox.style.display = 'none';
-  }
+  detalhesBox.style.display = (detalhesBox.style.display === 'none') ? 'block' : 'none';
 });
+
+renderPokemon(searchPokemon);
