@@ -83,17 +83,17 @@ main {
 .button {
     width: 50%;
     padding: 4%;
-    border: 2px solid #000;
-    border-radius:  5px;
+    border: 2px solid #000000;
+    border-radius: 5px;
     font-size: clamp(8px, 5vw, 1rem);
     font-weight: 600;
-    color: rgb(216, 108, 20);
-    background-color: rgb(37, 35, 35);
-    box-shadow: -2px 3px 0 #222, -4px 6px 0 rgb(163, 82vw, 5);
+    color: rgb(231, 121, 31);
+    background-color: rgb(56, 48, 48);
+    box-shadow: -2px 3px 0 #221f1f, -4px 6px 0 #443f3f;
 }
 
 .button:active{
-    box-shadow: inset -4px 4px 0 #222;
+    box-shadow: inset -4px 4px 0 #464141;
     font-size: 0.9rem;
 }
 
